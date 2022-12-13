@@ -1,13 +1,13 @@
 
 
-# _Paquete de vigilancia de ESAVIs Centinela - OPS_ - Documento de diseño del sistema
+# Paquete de vigilancia de ESAVIs Centinela - OPS_ - Documento de diseño del sistema
 
 
 # Introducción
 
-_“Uno de los componentes esenciales del sistema de vacunación segura es la vigilancia de los eventos supuestamente atribuibles a la vacunación o inmunización (ESAVI). A través de esta vigilancia, se busca detectar de manera temprana cualquier evento adverso que ocurra luego de la vacunación, con el propósito de controlar y clasificar los riesgos relacionados con la vacuna, el proceso de fabricación, el transporte, el almacenamiento, la administración, así como con toda situación inherente a la persona vacunada, o para descartar la relación de dicho evento con la vacuna.” ([https://iris.paho.org/handle/10665.2/55384](https://iris.paho.org/handle/10665.2/55384)) _
+“Uno de los componentes esenciales del sistema de vacunación segura es la vigilancia de los eventos supuestamente atribuibles a la vacunación o inmunización (ESAVI). A través de esta vigilancia, se busca detectar de manera temprana cualquier evento adverso que ocurra luego de la vacunación, con el propósito de controlar y clasificar los riesgos relacionados con la vacuna, el proceso de fabricación, el transporte, el almacenamiento, la administración, así como con toda situación inherente a la persona vacunada, o para descartar la relación de dicho evento con la vacuna.” ([https://iris.paho.org/handle/10665.2/55384](https://iris.paho.org/handle/10665.2/55384)) _
 
-_La OPS ha identificado la necesidad de varios países de tener acceso a sistemas de información que puedan utilizarse como ayuda en el proceso de registrar, notificar, investigar y clasificar ESAVIs._
+La OPS ha identificado la necesidad de varios países de tener acceso a sistemas de información que puedan utilizarse como ayuda en el proceso de registrar, notificar, investigar y clasificar ESAVIs._
 
 
 # Resúmen del diseño del sistema
@@ -42,12 +42,12 @@ El programa de tracker está dividido en cuatro etapas no repetibles que utiliza
 
 ### Explicación de la estructura 
 
-_La idea es que este programa pueda ser utilizado por aquellos que reportan solo ESAVIs, o por aquellos países que reportan ESAVIs y EVADIEs, siendo la etapa de clasificación donde se determina que tipo de evento esta siendo registrado.  En el caso de los primeros, se ocultaría la etapa “EVADIE” y las reglas de programa correspondiente. _
+La idea es que este programa pueda ser utilizado por aquellos que reportan solo ESAVIs, o por aquellos países que reportan ESAVIs y EVADIEs, siendo la etapa de clasificación donde se determina que tipo de evento esta siendo registrado.  En el caso de los primeros, se ocultaría la etapa “EVADIE” y las reglas de programa correspondiente. _
 
 
 ### Etapas
 
-_El programa Centinela está dividido en cinco etapas. Para un resúmen de como ingresar datos, véase la guía rápida de uso del programa: LINK A QUICKGUIDE_
+El programa Centinela está dividido en cinco etapas. Para un resúmen de como ingresar datos, véase la guía rápida de uso del programa: LINK A QUICKGUIDE_
 
 
 #### Etapa de clasificación inicial
@@ -562,33 +562,16 @@ _Lista de indicadores incluídos: XXXXX_
 
 _Documentación: [https://docs.dhis2.org/en/implement/database-design/aggregate-system-design/indicators.html#:~:text=In%20DHIS2%2C%20the%20indicator%20is,do%20not%20have%20a%20denominator](https://docs.dhis2.org/en/implement/database-design/aggregate-system-design/indicators.html#:~:text=In%20DHIS2%2C%20the%20indicator%20is,do%20not%20have%20a%20denominator)._
 
-_ Lista de indicadores incluídos:
+Lista de indicadores incluídos:
 
 
 ## Tableros:
 
-_El programa cuenta con tres tableros básicos que deberán ser adaptados a las necesidades del país. Estos muestran visualizaciones basadas en lo indicadores descritos en la sección anterior._
+El programa cuenta con tres tableros básicos que deberán ser adaptados a las necesidades del país. Estos muestran visualizaciones basadas en lo indicadores descritos en la sección anterior.
 
-_Tablero ESAVI_
+Tablero ESAVI
 
-_Tablero EVADIE_
-
-
-# Validation rules / Program rules
-
-_[any needed justification. Otherwise add ref to Installation guide]_
-
-_program rules / managements for clinical decision-support tools to be added if relevant_
-
-
-# Dashboards 
-
-
-
-* _[Dashboards are included? Provide name and any specific info if required_
-* _Provide table summary of the items in the dashboard (or provide an excel with such info) - name of item, title, type, indicators used_
-* _Screenshot of dashboard items and provide description of content for each dashboard + supplementary screenshots for any item that might require further explanation]_
-* _Please follow data visualization suggestions outlined here: _
+Tablero EVADIE
 
 
 # Special considerations
