@@ -1,19 +1,19 @@
 
 
-# Paquete de vigilancia de ESAVIs Centinela - OPS_ - Documento de diseño del sistema
+# Paquete de vigilancia de ESAVIs Centinela - OPS - Documento de diseño del sistema
 
 
-# Introducción
+## Introducción
 
 “Uno de los componentes esenciales del sistema de vacunación segura es la vigilancia de los eventos supuestamente atribuibles a la vacunación o inmunización (ESAVI). A través de esta vigilancia, se busca detectar de manera temprana cualquier evento adverso que ocurra luego de la vacunación, con el propósito de controlar y clasificar los riesgos relacionados con la vacuna, el proceso de fabricación, el transporte, el almacenamiento, la administración, así como con toda situación inherente a la persona vacunada, o para descartar la relación de dicho evento con la vacuna.” ([https://iris.paho.org/handle/10665.2/55384](https://iris.paho.org/handle/10665.2/55384)) _
 
 La OPS ha identificado la necesidad de varios países de tener acceso a sistemas de información que puedan utilizarse como ayuda en el proceso de registrar, notificar, investigar y clasificar ESAVIs._
 
 
-# Resúmen del diseño del sistema
+## Resúmen del diseño del sistema
 
 
-## Caso de uso
+### Caso de uso
 
 El programa Centinela es un programa de tracker para DHIS2 que registra datos de eventos de Efectos adversos supuestamente atribuibles a la vacunación e inmunización (ESAVI) y efectos adversos de interés especial (EVADIE). Ha sido configurado basado en el [Manual de vigilancia de eventos supuestamente atribuibles a la vacunación o inmunización en la Región de las Américas](https://iris.paho.org/handle/10665.2/55384)
 
@@ -22,7 +22,7 @@ El programa Centinela es un programa de tracker para DHIS2 que registra datos de
 El programa cuenta con la posibilidad de incluir los catálogos de CIE, MEDDRA y WHODrug y está mapeado a los requerimientos para transmisión de datos a Vigibase, la base de datos mundial de farmacovigilancia.
 
 
-## Estructura del programa
+### Estructura del programa
 
 
 ### Resúmen del contenido
@@ -32,7 +32,7 @@ El paquete de centinela cuenta con un programa de datos individuales longitudina
 El programa de tracker está dividido en cuatro etapas no repetibles que utilizan formularios personalizados. Para información general acerca de como utilizar DHIS2 Tracker, ver la [documentación] ([https://docs.dhis2.org/en/use/user-guides/dhis-core-version-master/tracking-individual-level-data/tracker-capture.html](https://docs.dhis2.org/en/use/user-guides/dhis-core-version-master/tracking-individual-level-data/tracker-capture.html)).
 
 
-### Diagrama del programa
+#### Diagrama del programa
 
 
 
@@ -40,47 +40,47 @@ El programa de tracker está dividido en cuatro etapas no repetibles que utiliza
 
 
 
-### Explicación de la estructura 
+#### Explicación de la estructura 
 
 La idea es que este programa pueda ser utilizado por aquellos que reportan solo ESAVIs, o por aquellos países que reportan ESAVIs y EVADIEs, siendo la etapa de clasificación donde se determina que tipo de evento esta siendo registrado.  En el caso de los primeros, se ocultaría la etapa “EVADIE” y las reglas de programa correspondiente. _
 
 
-### Etapas
+#### Etapas
 
 El programa Centinela está dividido en cinco etapas. Para un resúmen de como ingresar datos, véase la guía rápida de uso del programa: LINK A QUICKGUIDE_
 
 
-#### Etapa de clasificación inicial
+##### Etapa de clasificación inicial
 
 _En esta etapa se determina si el evento es un ESAVI o EVADIE basado en una serie de preguntas. Dependiendo de la clasificación inicial se habilitarán las etapas correspondientes._
 
 
-#### Etapa EVADIE
+##### Etapa EVADIE
 
 _Solamente estaría disponible cuando el evento corresponda a un EVADIE._
 
 
-#### Etapa Notificación ESAVI
+##### Etapa Notificación ESAVI
 
 _La etapa de notificación ESAVI solo está disponible cuando el evento corresponde a un ESAVI, y es donde se registran los datos generales del ESAVI y una clasificación preliminar._
 
 
-#### Etapa Investigación ESAVI
+##### Etapa Investigación ESAVI
 
 _La etapa de investigación ESAVI solamente cuando es especificado que el evento requiere una investigación._
 
 
-#### Etapa Clasificación final
+##### Etapa Clasificación final
 
 _Esta etapa normalmente es accesible solamente a nivel distrital o nacional (es decir, a un nivel superior), y es donde se confirman los resultados del ESAVI y la clasificación final_
 
 
-## Usuarios Potenciales
+### Usuarios Potenciales
 
 El programa está pensado para que los datos sean ingresados al nivel más bajo posible. Dependiendo de cómo se organice la implementación, hay distintas maneras de configurar el acceso usando los grupos de usuarios, roles, acceso a unidades organizativas, y acceso a las distintas etapas del programa. Antes de implementar, el país deberá aclarar el proceso de negocio para los ESAVI/EVADIE que deberá seguirse y quienes deben tener acceso a la información y a que nivel.
 
 
-### Combinación de grupos de usuario, roles y acceso a unidad organizativa
+#### Combinación de grupos de usuario, roles y acceso a unidad organizativa
 
  
 Los grupos de usuario sirven para dar acceso a los distintos programas (por ejemplo, el programa de EVADIE). Y regular que nivel de acceso tienen los usuarios dentro de ese grupo al programa. El nivel de acceso está basado en datos y metadatos, y en poder ver o editar.
@@ -118,7 +118,7 @@ Para una implementación del módulo centinela donde los usuarios ingresan datos
 
 
 
-### Grupos de usuarios / roles con mayor granularidad
+#### Grupos de usuarios / roles con mayor granularidad
 
 En el caso que distintas personas estén ingresando datos de ESAVI/EVADIE a distintos niveles, se podría dividir el acceso a las distintas secciones del programa basado en la posición de la persona y el nivel de decisión.  
 
@@ -130,23 +130,23 @@ En el caso que distintas personas estén ingresando datos de ESAVI/EVADIE a dist
 | Centinela: ESAVI Nivel Superior | Usuario que realiza la Clasificación final del ESAVI                  | Nivel nacional /Distrital dependiendo de la organización        | Clasificación /  ESAVI / Investigación/Nivel Superior | Ver y editar  | Ver        | Ver        |
 
 
-## Mayor granularidad
+### Mayor granularidad
 
 En caso de que el país quisiste mauor granularidad de acceso, es posible agregar mas grupos y entre la combinación de roles, acceso a unidad organizativa y acceso a las distintas etapas y aplicaciones, poder lograr restringir el nivel de acceso deseado.
 
 
-# Configuración del programa de tracker
+## Configuración del programa de tracker
 
 El programa de Tracker CENTINELA incluído en este paquete debe considerarse un programa inicial que cumple con los requerimientos de OPS para la captura de datos de ESVI. Este deberá adaptarse a la realidad nacional antes de comenzar a ser utilizado, en particular en el perfil de la persona. Las distintas etapas están configuradas con formularios personalizados que si van a cambiarse requieren conocimiento de CSS, javascript y HTML. 
 
 
 
-### Placeholders
+#### Placeholders
 
 Algunos de los elementos de datos están asociados a un estándar terminológico. Distintos países optarán por distintos estándares, y por tanto, no los hemos incluído en este paquete. En vez de los catálogos estandarizados, hemos incluído un placeholder para que el país pueda incluir el estándar que sea adecuado a su contexto. Véase la guía de instalación para ver instrucciones de como configurar estos estándares. 
 
 
-####  Lista de elementos que contienen un placeholder 
+#####  Lista de elementos que contienen un placeholder 
 
 
 Esta lista contiene actualmente el ejemplo del estándar de terminología que se está aplicando en la instancia regional. 
@@ -493,12 +493,12 @@ Esta lista contiene actualmente el ejemplo del estándar de terminología que se
 
 
 
-# Detalles de las etapas
+## Detalles de las etapas
 
 Las etapas se han configurado con formularios custom en HTML, y un formulario con secciones en caso que se desee utilizar android. Las capturas de pantalla corresponden al formulario web custom.
 
 
-## Registro inicial del caso
+### Registro inicial del caso
 
 El registro inicial del caso son los datos de la persona deberán adecuarse a las necesidades del país cuando se hace una instalación nacional (Por ejemplo, cambiar el nombre de “municipio” a “cantones” y modificar la lista de opciones a los lugares correspondientes. \
  \
@@ -511,10 +511,10 @@ El registro inicial del caso son los datos de la persona deberán adecuarse a la
 
 
 
-## Etapa 1:Clasificación 
+### Etapa 1:Clasificación 
 
 
-## Etapa de clasificación inicial
+### Etapa de clasificación inicial
 
 _En esta etapa se determina si el evento es un ESAVI o EVADIE basado en una serie de preguntas. Dependiendo de la clasificación inicial se habilitarán las etapas correspondientes._
 
@@ -527,7 +527,7 @@ _En esta etapa se determina si el evento es un ESAVI o EVADIE basado en una seri
 
 
 
-## Etapa EVADIE
+### Etapa EVADIE
 
 _Solamente estaría disponible cuando el evento corresponda a un EVADIE._
 
@@ -537,10 +537,10 @@ _Solamente estaría disponible cuando el evento corresponda a un EVADIE._
 _Esta etapa normalmente es accesible solamente a nivel distrital o nacional (es decir, a un nivel superior), y es donde se confirman los resultados del ESAVI y la clasificación final_
 
 
-# Analytics
+## Analytics
 
 
-## Indicadores/ Indicadores
+### Indicadores/ Indicadores
 
 _DHIS2 calcula indicadores basados en los datos y genera visualizaciones preconfiguradas que son principalmente mostradas en los tableros de información. Usuarios, dependiendo de su acceso, pueden crear sus propias visualizaciones, mapas gráficas e indicadores._
 
@@ -551,21 +551,21 @@ _Los indicadores incluidos dentro del paquete son los indicadores más básicos 
 _Para la exportación de datos, y en función del volumen y del análisis que se quiera establecer, se podría usar la propia API que provee dhis2. Mediante dicha API, se puede consultar tanto los datos “en tiempo real” como los datos “de análisis”. Las llamadas a la API dependerán del análisis que se quiera realizar. Además, hay que tener en cuenta que pueden definir políticas para la descarga de información (en función de lo actualizado que se quiera estar) y que estas llamadas se pueden realizar de manera programática mediante scripts en diferentes lenguajes de programación. El modelo de datos que es usado para descargar la información puede alterarse de manera programática para que la información a analizar sea lo más idónea para este proceso.  _
 
 
-### Indicadores de programa
+#### Indicadores de programa
 
 _Documentación: https://docs.dhis2.org/en/use/android-app/program-indicators-supported.html _
 
 _Lista de indicadores incluídos: XXXXX_
 
 
-### Indicadores
+#### Indicadores
 
 _Documentación: [https://docs.dhis2.org/en/implement/database-design/aggregate-system-design/indicators.html#:~:text=In%20DHIS2%2C%20the%20indicator%20is,do%20not%20have%20a%20denominator](https://docs.dhis2.org/en/implement/database-design/aggregate-system-design/indicators.html#:~:text=In%20DHIS2%2C%20the%20indicator%20is,do%20not%20have%20a%20denominator)._
 
 Lista de indicadores incluídos:
 
 
-## Tableros:
+### Tableros:
 
 El programa cuenta con tres tableros básicos que deberán ser adaptados a las necesidades del país. Estos muestran visualizaciones basadas en lo indicadores descritos en la sección anterior.
 
@@ -574,6 +574,6 @@ Tablero ESAVI
 Tablero EVADIE
 
 
-# Special considerations
+## Special considerations
 
 Ciertos procesos deberán tomarse en cuenta a la hora de instalar y modificar el paquete en una instancia propia. Por favor referirse a la guía de instalación de paquetes para mas detalles
